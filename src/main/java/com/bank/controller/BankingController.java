@@ -12,7 +12,7 @@ public class BankingController {
 
     @GetMapping("/hello")
     public String addCustomer(){
-        return "You are added";
+        return "Hello World";
     }
 
     @GetMapping("/add/{name}")
