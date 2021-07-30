@@ -1,6 +1,7 @@
 package com.bank.controller;
 
 import com.bank.Bank;
+import com.bank.Customer;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,5 +36,10 @@ public class BankingController {
     @GetMapping("/interest/{accountNo}")
     public Double getInterest(@PathVariable("accountNo") int accountNo ){
         return iciciBank.getInterest(accountNo);
+    }
+
+    @GetMapping("/changeName/{acc}/{name}")
+    public String changeName(@PathVariable("acc") int accountNumber ,@PathVariable("name") String name){
+        return iciciBank.changeName(accountNumber,name);
     }
 }

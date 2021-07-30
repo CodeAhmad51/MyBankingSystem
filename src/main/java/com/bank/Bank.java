@@ -59,4 +59,23 @@ public class Bank {
         }
         return null;
     }
+
+    public String changeName( int accountNo ,String name) {
+        for (Customer k : customers) {
+            if (k.accountNo == accountNo) {
+                k.name = name;
+                return "name changed successfully";
+            }
+
+        }
+        return " Account Number is incorrect";
+    }
+
+    public Customer getDetails(int accountNo){
+        for(Customer c : customers){
+            if(c.accountNo == accountNo) return c;
+        }
+
+        return null;
+    }
 }
